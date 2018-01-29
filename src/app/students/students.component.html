@@ -1,0 +1,224 @@
+
+
+<div id="wrapper">
+
+    <!-- Navigation -->
+
+<form #frm="ngForm" id="formNewStudents" name="formNewStudents" #studentsData="ngForm" (ngSubmit)="AddnewStudents(studentsData.value)">
+    <div id="page-wrapper">
+        <div class="row">
+
+                <div _ngcontent-c3="" class="col-lg-12">
+                        <div _ngcontent-c3="" class="panel panel-default">
+                            <div _ngcontent-c3="" class="panel-heading">
+                                Basic Form Elements
+                              
+                                <a href="" (click)="sendmeHome()"><strong>Send me home</strong></a>
+                                <br/>
+                            </div>
+                            <div _ngcontent-c3="" class="panel-body">
+                                <div _ngcontent-c3="" class="row">
+                                    <div _ngcontent-c3="" class="col-lg-6">
+                                            
+                                            
+                                            <div class="form-group">
+                                                    <label>StudentsName  </label>
+                                                    <input class="form-control" type="text" name="StudentsName" id="StudentsName" placeholder="Enter StudentsName" #studname="ngModel"  ngModel  required pattern="[a-zA-Z][a-zA-z]+">
+                                                
+                                                </div>
+                                                <div  *ngIf="studname.touched" >  
+                                                    <div  class="alert alert-danger" *ngIf="studname.errors?.required">  Name is Required
+                                                        </div>                                           
+                                                        <div  class="alert alert-danger" *ngIf="studname.errors?.pattern"> wrong Pattern
+                                                            </div>  
+                                                </div>
+                                                
+                                                <div class="form-group">
+                                                    <label>Registration Number</label>
+                                                    <input class="form-control" maxLength="10" minLength="2" type="text" #regNo="ngModel" name="registrationNumber" id="registrationNumber" placeholder="Enter Registartion Number"  required pattern="[a-zA-Z][a-zA-z]+" ngModel >
+                                                
+                                                </div>
+                                                <div  *ngIf="regNo.touched" >  
+                                                        <div  class="alert alert-danger" *ngIf="regNo.errors?.required">  Registration no is Required
+                                                            </div>                                           
+                                                            <div  class="alert alert-danger" *ngIf="regNo.errors?.pattern ||regNo.errors?.minLength "> wrong Pattern
+                                                                </div>  
+                                                    </div>
+                                          	
+                                        <div class="form-group">
+                                            <label>Gender</label>
+                                            <select name="Gender" [ngModel]="gender" id=Gender  class="form-control" ngModel>
+                                                <option [ngValue]="null" disabled="true">Choose a Gender..</option>
+                                            
+                                                
+                                                <option >Male</option>
+                                                <option >Female</option>
+                                            </select>
+                                        </div> 
+
+                                              
+                                                <div class="form-group">
+                                                    <label>room Number</label>
+                                                    <input class="form-control" type="text" name="roomNumber" id="roomNumber" placeholder="Enter room Number " ngModel #romNo="ngModel"  required pattern="[0-9]*" maxLength="10">
+                                                
+                                                </div>
+                                                <div  *ngIf="romNo.touched" >  
+                                                    <div class="alert alert-danger" *ngIf="romNo.errors?.required"> Room  no is Required</div>                                           <!-- <div class="alert alert-danger" *ngIf="studname.errors?.required" > -->
+                                                    <div  class="alert alert-danger" *ngIf="romNo.errors?.pattern"> Only Number required</div>  
+                                                    </div>
+
+                                                <div class="form-group">
+                                                    <label>Marritalstatus</label>
+                                                  <select name="Marritalstatus" id="Marritalstatus"  [ngModel]="status"   class="form-control" ngModel>
+                                         
+                                        
+                                                              <option [ngValue]="null" disabled="true">Choose marrital status..</option>
+                                                       <option>Married</option>
+                                                       <option>Unmarried</option>
+                                                   </select>  
+
+                                               </div>
+                                                
+                                    </div>
+                                    
+                                    <div _ngcontent-c3="" class="col-lg-6">
+     
+                                        <div class="form-group">
+                                            <label>Semister</label>
+                                             <select name="Semister" id="Semister"  [ngModel]="semister"   class="form-control" ngModel >
+                                                       <option [ngValue]="null" disabled="true">Choose semister ..</option>     
+                                                    <option>1st Sem</option>
+                                                    <option>2nd Sem</option>
+                                                    <option>3rd Sem</option>
+                                                    <option>4th Sem</option>
+                                                </select>  
+                                        </div>
+                                                <div class="form-group">
+                                                    <label>DOB</label>
+                                                    <input class="form-control" type="text" name="DOB" id="DOB" placeholder="Enter DOB " ngModel>
+                                                    <div  *ngIf="regNo.touched" >  
+                                                            <div  class="alert alert-danger" *ngIf="regNo.errors?.required">  Registration no is Required
+                                                                </div>                                           
+                                                                <div  class="alert alert-danger" *ngIf="regNo.errors?.pattern ||regNo.errors?.minLength "> wrong Pattern
+                                                                    </div>  
+                                                        </div>
+                                                </div>
+                                                <div class="form-group">
+                                                        <label>bloodGroup</label>
+                                                               <select name="bloodGroup" id="bloodGroup"  [ngModel]="bloodGroup"   class="form-control" ngModel >
+                                                                       <option [ngValue]="null" disabled="true">Choose a blood group..</option>     
+                                                                    <option> O+ve </option>
+                                                                    <option> O-ve</option>
+                                                                    <option> A+ve</option>
+                                                                    <option>A-ve</option>
+                                                                     <option>  B+ve </option>
+                                                                    <option> B-ve</option>
+                                                                    <option> AB+ve</option>
+                                                                    <option>AB-ve</option>
+                                                                </select>  
+                                                        </div>
+                                                   
+                                                
+                                                <div class="form-group">
+                                                    <label>Nationality</label>
+                                                    <input class="form-control" type="text" name="Nationality" id="Nationality" placeholder="Enter Nationality" #nationlity="ngModel"  required  ngModel>
+                                                    <div  *ngIf="nationlity.touched" >  
+                                                            <div [hidden]="!nationlity.errors?.required" class="alert alert-danger" > Nationality is Required</div>                                           <!-- <div class="alert alert-danger" *ngIf="studname.errors?.required" > -->
+                                                            
+                                                            </div>
+                                                </div>
+                                             
+													   <div class="form-group">
+                                                        <label>Categeory</label>
+                                                        <select class="form-control" name="Categeory" [ngModel]="categeory1"  id="Categeory" ngModel>
+                                                            <option [ngValue]="null" disabled="true">Choose a Categeory..</option>
+															 <option  *ngFor="let cat of categeory" value= {{cat.name}} >
+                                                              {{cat.name}}
+                                                            </option> 
+                                                            
+                                                          </select>
+
+                                                       
+                                                    </div>                                            
+                                                <input type="submit" value="Add Student" class="btn btn-success" [disabled]="frm.invalid">  
+                                                <br>
+
+                                                
+                                    </div>
+                                    
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+            <div class="col-lg-12">
+               
+                <!-- <a href="" (click)="sendmeHome()"><strong>Send me home</strong></a> -->
+               
+                  <div class="col-lg-6">
+                 <div class="form-group">
+                        <select  class="form-control" name="countery" [ngModel]="country1" id="countery" (change)="onSelect($event.target.value)" ngModel>
+                               <option [ngValue]="null" disabled="true">Select Country ...</option>
+                            <option  *ngFor="let cat of countries"  value= {{cat.id}} >
+                                  {{cat.name}}
+                                </option>
+                              </select>
+                   <br/>
+                   <br/>
+
+                   <select  class="form-control" (change)="onSelectCity($event.target.value)" >
+                    <option [ngValue]="null" disabled="true">Select State ....</option>
+                    <option *ngFor="let state of states " value= {{state.id}}>{{state.name}}</option> 
+                      </select>
+
+                      <br/>
+                      <select  class="form-control">
+                        <option [ngValue]="null" disabled="true">Select city ....</option>
+                        <option *ngFor="let city of cities " value= {{city.id}}>{{city.name}}</option> 
+                          </select>
+
+                      
+                </div> 
+
+
+            <div class="form-group">
+              {{frm.value | json}}  
+                </div> 
+
+                <!-- <div class="form-group">
+                    <label for="disabledSelect">Gender</label>
+                    <select name="Gender" id="Gender" class="form-control" placeholder="Enter Gender" ngModel >
+                        <option>Male</option>
+                        <option>female</option>
+                    </select>
+                </div> -->
+                <!-- <div class="form-group">
+                    <label>room Number</label>
+                    <input class="form-control" type="text" name="roomNumber" id="roomNumber" placeholder="Enter room Number " ngModel>
+                
+                </div> -->
+
+              
+                
+ <!-- <input type="submit" value="Add Student" class="btn btn-success" >  
+<br> -->
+
+
+<div *ngIf="isAdded">{{confirmationString}}</div>
+<!-- <h3 *ngIf="isAdded">{{confirmationString}}</h3> -->
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+     
+        <!-- /.row -->
+    
+
+</div>
+
+
+
+</form>
