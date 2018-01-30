@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpModule,Http } from '@angular/http';
 import{StudentService} from './student.service';
 import{RouterModule} from '@angular/router';
-import { FormsModule } from '@angular/Forms';
+// import { FormsModule } from '@angular/Forms';
 
 import { AppComponent } from './app.component';
 import { StudentsComponent } from './students/students.component';
@@ -37,7 +37,7 @@ import {NgDatepickerModule} from 'ng2-datepicker';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    // FormsModule,
     HttpModule,
    // HttpClient,
    NgDatepickerModule,
