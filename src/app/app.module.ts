@@ -18,7 +18,7 @@ import {routes} from './app.route';
 import { UpdatestudentComponent } from './updatestudent/updatestudent.component';
 import { DetailsComponent } from './details/details.component'
 import {NgDatepickerModule} from 'ng2-datepicker';
-
+import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 // import {HttpClientModule,HttpClient} from '@angular/common/http'
 @NgModule({
   declarations: [
@@ -37,11 +37,12 @@ import {NgDatepickerModule} from 'ng2-datepicker';
   ],
   imports: [
     BrowserModule,
+    BsDatepickerModule.forRoot(),
     // FormsModule,
     HttpModule,
    // HttpClient,
    NgDatepickerModule,
-   
+  // BsDatepickerModule,
     RouterModule.forRoot(routes)
   
   ],

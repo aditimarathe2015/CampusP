@@ -16,29 +16,6 @@ export class AppComponent {
     //   require("style-loader!assets/css/style2.css");
     // }
   }
-  myEvent(event) {
-    
-
-   // require("style-loader!assets/css/style2.css");
-  }
-  myEvent1(event) {
-
-
-   // require("style-loader!assets/css/style1.css");
-  }
-  onSelect(event)
-  {
-    if  (event=="Red")
-    {
-      require("style-loader!assets/css/style1.css");
-    }
-    else if  (event=="Green")
-    {
-      require("style-loader!assets/css/style2.css");
-    }
-   else if  (event=="Yellow")
-  {
-      require("style-loader!assets/css/style3.css");
-    }
-  }
+  
+ 
 }

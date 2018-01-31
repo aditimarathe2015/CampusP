@@ -2,22 +2,15 @@
     
     
  
-    <!-- <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    
-
-<select>
-        
-    <option (change)="onSelectCss($event.target.value)" value="Blue">Blue</option>
-    <option (change)="onSelectCss($event.target.value)"  value="Blue">Blue</option>  
-    <option (change)="onSelectCss($event.target.value)" value="Blue">Blue</option>
-</select> -->
-
 
 
 
 <div class="container">
+       
     <div class="row">
+           
         <div class="col-md-4 col-md-offset-4">
+             
             <div class="login-panel panel panel-default">
                 <div class="panel-heading">
                     <h1>Change colore here</h1>
@@ -56,6 +49,36 @@
                     </form>
                 </div>
             </div>
+        
+        
+        
+       
+       
+       
+      
+      
+      
+      
         </div>
+        <div class="row">
+                <br/>
+                <br/>
+            <br/>
+            <br/>
+        <div class="col-md-2">
+                <select  class="form-control" name="color" [ngModel]="color" id="color" (change)="onSelect($event.target.value)" ngModel>
+                        <option  value="Red" >Red</option>
+                        <option value="Green">Green</option>
+                        <option value="Yellow">Yellow</option>
+                       </select> 
+                    
+                    </div>
+
+                    <div  class="col-md-4"><h4>Upload Logo</h4>
+                        <input type="file" #fileInput placeholder="Upload file..." />
+                        <button type="button" (click)="upload()">Upload</button>
+                    
+                    </div>
+              </div>
     </div>
 </div>
