@@ -49,7 +49,7 @@ export class StudentsComponent implements OnInit {
 
    //***********Add Student ********** */
    AddnewStudents=function(studentsData){
-
+debugger;
     this.studentsObj={
       "StudentsName":studentsData.StudentsName,
       "Gender":studentsData.Gender,
@@ -68,7 +68,7 @@ export class StudentsComponent implements OnInit {
       this._http.post('http://localhost:2403/students',this.studentsObj)
       .subscribe((res:Response)=>[console.log(res)],this.isAdded=true)
       if  (this.isAdded=true){
-        this.router.navigate(['/dashboard/StudentList']);
+        // this.router.navigate(['/dashboard/StudentList']);
       }
      
    }

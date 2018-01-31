@@ -35,7 +35,7 @@
                                                     <label>Gender</label>
                                                     <select name="Gender" id="Gender" class="form-control"  name="Gender"  [(ngModel)]="data.Gender" ngModel >
                                                         <option>Male</option>
-                                                        <option>female</option>
+                                                        <option>Female</option>
                                                     </select>
                                                 </div>
                                                 
@@ -46,16 +46,23 @@
                                                 </div>
                                                 <div class="form-group">
                                                         <label>Marritalstatus</label>
-                                                        <input class="form-control" type="text" name="Marritalstatus" id="Marritalstatus" placeholder="Enter Marritalstatus" [(ngModel)]="data.Marritalstatus" ngModel>
-                                                    
+                                                         <select name="Marritalstatus" id="Marritalstatus" class="form-control"  name="Marritalstatus"  [(ngModel)]="data.Marritalstatus" ngModel >
+                                                            <option>Married</option>
+                                                            <option>Unmarried</option>
+                                                        </select>
                                                     </div>
                                     </div>
                                     
                                     <div _ngcontent-c3="" class="col-lg-6">
                                             <div class="form-group">
                                                     <label>Semister</label>
-                                                    <input class="form-control" type="text" name="Semister" id="Semister" placeholder="Enter Semister " [(ngModel)]="data.Semister" ngModel>
-                                                
+                                                    <!-- <input class="form-control" type="text" name="Semister" id="Semister" placeholder="Enter Semister " [(ngModel)]="data.Semister" ngModel> -->
+                                                    <select name="Semister" id="Semister" class="form-control"  name="Semister"  [(ngModel)]="data.Semister" ngModel >
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                    </select>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>DOB</label>
@@ -64,8 +71,17 @@
                                                 </div>
                                                 <div class="form-group">
                                                         <label>bloodGroup</label>
-                                                        <input class="form-control" type="text" name="bloodGroup" id="bloodGroup" placeholder="Enter bloodGroup " [(ngModel)]="data.bloodGroup" ngModel>
-                                                    
+                                                          <select name="bloodGroup" id="bloodGroup" class="form-control"  name="bloodGroup"  [(ngModel)]="data.bloodGroup" ngModel >
+                                            
+                                                            <option> O+ve </option>
+                                                            <option> O-ve</option>
+                                                            <option> A+ve</option>
+                                                            <option>A-ve</option>
+                                                             <option>  B+ve </option>
+                                                            <option> B-ve</option>
+                                                            <option> AB+ve</option>
+                                                            <option>AB-ve</option>
+                                                        </select>
                                                     </div>
                                                 
                                                 <div class="form-group">

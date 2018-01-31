@@ -8,6 +8,7 @@ import {FormGroup,FormControl,Validator} from '@angular/forms'
 })
 export class AppComponent {
   title = 'app';
+  
   ngOnInit(){
     // if(isDevMode()) {
     //   require("style-loader!assets/css/style1.css");
@@ -18,12 +19,12 @@ export class AppComponent {
   myEvent(event) {
     
 
-    require("style-loader!assets/css/style2.css");
+   // require("style-loader!assets/css/style2.css");
   }
   myEvent1(event) {
 
 
-    require("style-loader!assets/css/style1.css");
+   // require("style-loader!assets/css/style1.css");
   }
   onSelect(event)
   {
@@ -31,12 +32,12 @@ export class AppComponent {
     {
       require("style-loader!assets/css/style1.css");
     }
-   else if  (event=="Green")
+    else if  (event=="Green")
     {
       require("style-loader!assets/css/style2.css");
     }
-    else if  (event=="Yellow")
-    {
+   else if  (event=="Yellow")
+  {
       require("style-loader!assets/css/style3.css");
     }
   }
