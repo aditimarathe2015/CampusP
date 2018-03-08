@@ -8,7 +8,9 @@ import { Country } from '../country';
 import { State  } from '../state';   
 import { city } from '../city';
 import{FormGroup,FormControl,Validator} from '@angular/forms';
+import { ICategeory } from '../students-list/students';
 
+import {ToastsManager} from 'ng2-toastr/ng2-toastr';
 @Component({
 
   selector: 'app-students',
@@ -21,10 +23,11 @@ export class StudentsComponent implements OnInit {
   
   data:object =[];
   goals:any;
-  categeory :any[];
+  categeory:ICategeory[] ;
   countries: Country[];
   states: State[];
   cities: city[];
+  
   country:any;
   mySelect:any;
 //***Variable for dropdown place holder ... */
@@ -34,7 +37,7 @@ export class StudentsComponent implements OnInit {
     bloodGroup;
     categeory1;
     country1;
-  constructor(private route : ActivatedRoute,private _http:Http, private router:Router,private _dataService:StudentService) { 
+  constructor(private route : ActivatedRoute,private _http:Http, private router:Router,private _dataService:StudentService,public toastr: ToastsManager) { 
  
      this.route.params.subscribe(res=>console.log(res.id));
      //this.mySelect = -1;
@@ -46,10 +49,21 @@ export class StudentsComponent implements OnInit {
   
    isAdded:boolean=false;
    studentsObj:Object = {};
+   CheckAPI=function()
+   {
+
+    this.studentsObj={
+
+      "username": "1641011112"
+    }
+   
+     this._http.post('http://125.17.78.251:8988/CampusLynxPortal/token/pretokencheck:',this.studentsObj)
+     .subscribe((res:Response)=>[console.log(res)],this.isAdded=true)
+   }
 
    //***********Add Student ********** */
    AddnewStudents=function(studentsData){
-debugger;
+
     this.studentsObj={
       "StudentsName":studentsData.StudentsName,
       "Gender":studentsData.Gender,
@@ -63,23 +77,26 @@ debugger;
       "Categeory":studentsData.Categeory
 
      }
-   
-     
-      this._http.post('http://localhost:2403/students',this.studentsObj)
+ 
+    
+     this._http.post('http://localhost:2403/students',this.studentsObj)
       .subscribe((res:Response)=>[console.log(res)],this.isAdded=true)
       if  (this.isAdded=true){
+        console.log("jkhjkkj");
+        this.toastr.success('You are awesome!', 'Success!');
         // this.router.navigate(['/dashboard/StudentList']);
       }
      
    }
    //*******Categeory Dropdown List *********** */
-   getcategeory(){
- 
-    this._http.get("http://localhost:2403/categeory").subscribe(
-      (res:Response)=>{ this. categeory = res.json();
-   //    console.log(this. categeory);
-      }
-      )
+   getcategeory_data(){
+
+    this._dataService.get_categeory().subscribe((CategeoryData)=>this.categeory=CategeoryData);
+  //   this._http.get("http://localhost:2403/categeory").subscribe(
+  //     (res:Response)=>{ this. categeory = res.json();
+  //  //    console.log(this. categeory);
+  //     }
+  //     )
     }
 
 
@@ -104,11 +121,18 @@ this.country1=null;
    this. gender = null;
     this.mySelect = -1;
    
-    this.getcategeory();
+    this.getcategeory_data();
  
   }
 
 sendmeHome(){
- this.router.navigate([''])
+ // this.toastr.error('Username and password not found!', 'Oops!');
+ 
+ //this.router.navigate([''])
+}
+
+myMethod()
+{
+  //this.toastr.success('You are awesome!', 'Success!');
 }
 }

@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import {BehaviorSubject} from  'rxjs/BehaviorSubject';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import{Observable} from 'rxjs/Observable';
-import { IStudents } from './students-list/students';
+import { IStudents, ICategeory } from './students-list/students';
 import {Http,Response, Headers,HttpModule} from '@angular/http';
 import { Country } from './country'; 
-import { State  } from './state';   
+import { State  } from './state';  
 import {city} from './city';
 
 import 'rxjs/add/Observable/throw';
@@ -14,6 +14,8 @@ import 'rxjs/add/operator/catch';
 
 import 'rxjs/add/operator/do';
 
+import 'rxjs/add/operator/map';
+import { slidercontent } from './slidercontent';
 
 @Injectable()
 
@@ -66,19 +68,36 @@ export class StudentService {
       new city(10, 8, 'ccccccccccc')
      ];
    }
-  
-
+   getSliderContents() {
+    return [
+     new slidercontent(1, 'First ' ),
+     new slidercontent(2, 'second' ),
+     new slidercontent(3, 'third' )
+    ];
+  }
+   categeory:any[];
   Students:any[];
-  getdata(){
- 
-    this.http.get("http://localhost:2403/students").subscribe(
-      (res:Response)=>{ this. Students = res.json();
-   //   console.log(this. Students);
-      }
-      )
-    } 
+  get_students():Observable<IStudents[]>{
 
-  ///constructor(private _http:HttpClient) { }
+    return  this.http.get('http://localhost:2403/students').map((response:Response)=><IStudents[]> response.json());
+
+   // return this.http.get("http://localhost:2403/students").subscribe(
+     // (res:Response)=>{ this. Students = res.json();
+   //   console.log(this. Students);
+      //}
+     
+    } 
+    
+    get_categeory():Observable<ICategeory[]>{
+      return  this.http.get('http://localhost:2403/categeory').map((response:Response)=><ICategeory[]> response.json());
+
+      // return  this.http.get("http://localhost:2403/categeory").map(
+      //   (res:Response)=>{ this. categeory = res.json();
+      //   console.log(this. categeory);
+       // }
+        //)
+      }
+  
 
   cars=[
 

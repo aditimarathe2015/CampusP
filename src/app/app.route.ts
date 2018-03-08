@@ -10,6 +10,7 @@ import { StudentsListComponent } from './students-list/students-list.component';
 import { AppComponent } from './app.component';
 import { UpdatestudentComponent } from './updatestudent/updatestudent.component'
 import { DetailsComponent } from './details/details.component';
+import { SliderComponent } from './slider/slider.component';
 
 export const routes:Routes=[
   
@@ -33,6 +34,7 @@ export const routes:Routes=[
           {path: 'Employee', component: EmployeeComponent},
           { path: 'Students', component: StudentsComponent},
           { path: 'StudentList', component: StudentsListComponent},
+          { path: 'slider', component: SliderComponent},
           { path:'updatestudent/:id', component:UpdatestudentComponent }
              ]
   },

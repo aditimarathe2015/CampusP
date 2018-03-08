@@ -1,5 +1,5 @@
 export interface IStudents{
-    
+   
     StudentsName:string,
     Gender:string,
     registrationNumber:string,
@@ -10,6 +10,18 @@ export interface IStudents{
     Nationality:string,
     Marritalstatus:string,
     Categeory:string,
+
+    //Interface  ICategeory
+    id:string,
+    Categeoryname:string,
+   
+
+
+}
+export interface ICategeory{
+    
+    id:string,
+    Categeoryname:string,
    
    
 

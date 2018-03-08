@@ -39,8 +39,9 @@ deleteStudents=function(id){
 }
 
   getdata(){
- 
-    this.http.get("http://localhost:2403/students").subscribe(
+    //this.http.get("http://localhost:3000/api/users").subscribe(
+   
+     this.http.get("http://localhost:2403/students").subscribe(
       (res:Response)=>{ this. Students = res.json();
       // console.log(this. Students);
       }

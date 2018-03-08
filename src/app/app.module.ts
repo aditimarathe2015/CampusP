@@ -19,6 +19,9 @@ import { UpdatestudentComponent } from './updatestudent/updatestudent.component'
 import { DetailsComponent } from './details/details.component'
 import {NgDatepickerModule} from 'ng2-datepicker';
 import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
+import { SliderComponent } from './slider/slider.component';
+import {ToastsManager} from 'ng2-toastr/ng2-toastr';
+import { ToastModule } from "ng2-toastr/src/toast.module";
 // import {HttpClientModule,HttpClient} from '@angular/common/http'
 @NgModule({
   declarations: [
@@ -33,17 +36,21 @@ import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
  
     UpdatestudentComponent,
  
-    DetailsComponent
+    DetailsComponent,
+ 
+    SliderComponent
   ],
   imports: [
     BrowserModule,
     BsDatepickerModule.forRoot(),
+   // ToastModule.forRoot(),
     // FormsModule,
     HttpModule,
    // HttpClient,
    NgDatepickerModule,
   // BsDatepickerModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ToastModule.forRoot()
   
   ],
   providers: [StudentService,AppComponent],
